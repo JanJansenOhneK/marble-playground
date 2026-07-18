@@ -1,0 +1,16 @@
+
+{
+    "en": {
+        "placeholder": "placeholder123456!?#'+-*",
+        "lang.en": "English",
+        "lang.de": "German",
+        "error.abort": "Aborting!",
+        "error.nopygame": "No pygame installed! pygame is needed to play this game."
+    },
+    "de": {
+        "lang.en": "Englisch",
+        "lang.de": "Deutsch",
+        "error.abort": "Das Spiel wird abgebrochen!",
+        "error.nopygame": "Pygame ist nicht installiert! Pygame muss installiert sein um dieses Spiel zu spielen."
+    }
+}
