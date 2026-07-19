@@ -27,6 +27,7 @@ pyg_screen = pygame.display.set_mode(flags=(pygame.FULLSCREEN))
 pyg_running = True
 pygame.init()
 
+
 " MAIN LOOP "
 while pyg_running:
     for pyg_event in pygame.event.get():
