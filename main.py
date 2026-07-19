@@ -35,7 +35,7 @@ except ModuleNotFoundError:
 
 # pygame stuff
 WINDOW_SCALE = 50
-pyg_screen = pygame.display.set_mode((16*WINDOW_SCALE,9*WINDOW_SCALE),flags=(pygame.RESIZABLE))
+pyg_screen = pygame.display.set_mode((16*WINDOW_SCALE,9*WINDOW_SCALE),flags=pygame.RESIZABLE|pygame.SCALED)
 pyg_running = True
 pygame.init()
 pygame.display.set_caption(f"Marble Playground | {ver_json["group"]}{ver_json["ver"]}")

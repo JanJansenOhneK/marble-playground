@@ -11,3 +11,6 @@
 ## d3
 - Made window resizable
 - Window title
+## d4
+- batch and exe files for executing (need work)
+d
