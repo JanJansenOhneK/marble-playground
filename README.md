@@ -13,4 +13,5 @@
 - Window title
 ## d4
 - batch and exe files for executing (need work)
-d
+## d5
+- replaced my executable files with pyinstall

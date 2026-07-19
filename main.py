@@ -51,9 +51,10 @@ while pyg_running:
         if pyg_event.type == pygame.QUIT: # quit
             pyg_running = False
         elif pyg_event.type == pygame.KEYDOWN: # key
-            #if pyg_event.key == pygame.K_F11: # F11 and toggle fullscreen
+            if pyg_event.key == pygame.BUTTON_LEFT:
+                pass
+            #elif pyg_event.key == pygame.K_F11: # F11 and toggle fullscreen
             #    pygame.display.toggle_fullscreen()
-            pass
 
     # flip
     pygame.display.flip()
