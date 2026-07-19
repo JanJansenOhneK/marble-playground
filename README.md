@@ -8,3 +8,6 @@
 - Renamed changelog file
 - Corrected version file
 - Added savefile system
+## d3
+- Made window resizable
+- Window title

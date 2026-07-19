@@ -19,6 +19,12 @@ def t(path:str) -> str:
             return lang_json[lang][path]
     return path
 
+# version system
+ver_file = open("version.json","r")
+ver_json = json.load(ver_file)
+
+menu_name = "main"
+
 # import pygame
 try:
     import pygame
@@ -28,19 +34,33 @@ except ModuleNotFoundError:
     exit()
 
 # pygame stuff
-pyg_screen = pygame.display.set_mode(flags=(pygame.FULLSCREEN))
+WINDOW_SCALE = 50
+pyg_screen = pygame.display.set_mode((16*WINDOW_SCALE,9*WINDOW_SCALE),flags=(pygame.RESIZABLE))
 pyg_running = True
 pygame.init()
-
+pygame.display.set_caption(f"Marble Playground | {ver_json["group"]}{ver_json["ver"]}")
 
 " MAIN LOOP "
 while pyg_running:
+
+    # clear screen
+    pyg_screen.fill((0,0,0))
+
+    # event detect
     for pyg_event in pygame.event.get():
-        if pyg_event.type == pygame.QUIT:
+        if pyg_event.type == pygame.QUIT: # quit
             pyg_running = False
+        elif pyg_event.type == pygame.KEYDOWN: # key
+            #if pyg_event.key == pygame.K_F11: # F11 and toggle fullscreen
+            #    pygame.display.toggle_fullscreen()
+            pass
+
+    # flip
+    pygame.display.flip()
 
 
 " EXIT "
 # close all files
 lang_file.close()
 save_file.close()
+ver_file.close()
