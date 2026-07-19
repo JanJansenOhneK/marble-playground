@@ -4,14 +4,19 @@
 # import json
 import json
 
+# savefile system
+SAVENUM = 0
+save_file = open(f"saves/save{SAVENUM}.json","r")
+save_json = json.load(save_file)
+
 # language system
-LANG = "en"
+lang = save_json["lang"]
 lang_file = open("assets/lang.json","r")
 lang_json = json.load(lang_file)
 def t(path:str) -> str:
-    if LANG in lang_json:
-        if path in lang_json[LANG]:
-            return lang_json[LANG][path]
+    if lang in lang_json:
+        if path in lang_json[lang]:
+            return lang_json[lang][path]
     return path
 
 # import pygame
@@ -38,3 +43,4 @@ while pyg_running:
 " EXIT "
 # close all files
 lang_file.close()
+save_file.close()
