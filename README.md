@@ -15,3 +15,6 @@
 - batch and exe files for executing (need work)
 ## d5
 - replaced my executable files with pyinstall
+## d6
+- bg color is now darkblue
+- menu system

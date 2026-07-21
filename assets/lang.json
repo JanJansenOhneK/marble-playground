@@ -1,7 +1,8 @@
 
 {
     "en": {
-        "placeholder": "placeholder123456!?#'+-*",
+        "test.ph": "placeholder123456!?#'+-*",
+        "test.lt": "Language Test (english en)",
         "lang.en": "English",
         "lang.de": "German",
         "error.abort": "Aborting!",
@@ -10,6 +11,7 @@
         "menu.settings": "Settings"
     },
     "de": {
+        "test.lt": "Spachen Test (deutsch de)",
         "lang.en": "Englisch",
         "lang.de": "Deutsch",
         "error.abort": "Das Spiel wird abgebrochen!",
