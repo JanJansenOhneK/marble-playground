@@ -18,3 +18,5 @@
 ## d6
 - bg color is now darkblue
 - menu system
+## d7
+- added placeholder text in main menu

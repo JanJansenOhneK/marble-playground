@@ -43,8 +43,8 @@ pygame.init()
 pygame.display.set_caption(f"Marble Playground | {ver_json["group"]}{ver_json["ver"]}")
 
 # text stuff
-
-
+def text_gen(text:str="lorum ipcem whatever",size:int=20,color=(255,255,255)):
+    return pygame.font.Font("assets/fonts/main.ttf",size).render(text,True,color)
 
 # menu stuff
 menu_dict = {
@@ -60,7 +60,7 @@ def menu_switch(menustr:str):
         print(t("error.menu_switch.menunotfound"))
 def menu_render(menustr:str):
     if menustr == "main":
-        pass
+        pyg_screen.blit(text_gen("main menu lol"),(0,0))
     else:
         print(t("error.menu_render.menunotregistered"))
 
