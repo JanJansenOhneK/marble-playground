@@ -20,3 +20,5 @@
 - menu system
 ## d7
 - added placeholder text in main menu
+## d8
+- added placeholder button in main menu

@@ -42,13 +42,29 @@ pyg_running = True
 pygame.init()
 pygame.display.set_caption(f"Marble Playground | {ver_json["group"]}{ver_json["ver"]}")
 
-# text stuff
+# generators
 def text_gen(text:str="lorum ipcem whatever",size:int=20,color=(255,255,255)):
     return pygame.font.Font("assets/fonts/main.ttf",size).render(text,True,color)
+def button_gen(text:str="button text"):
+    BTG_COLOR = (100,100,100)
+    btg_text = text_gen(text)
+    btg_surf = pygame.Surface((btg_text.width+20,25))
+    btg_surf.fill(BTG_COLOR)
+    btg_surf.blit(btg_text,(10,0))
+    return btg_surf
+
+# button class
+class Button:
+    def __init__(self,surface,pos:pygame.rect.RectLike=(30,30)):
+        self.surface = surface
+        self.pos = pos
+    
+    def render(self):
+        pyg_screen.blit(self.surface,self.pos)
 
 # menu stuff
 menu_dict = {
-    "main": obj.Menu("Main Menu"),
+    "main": obj.Menu("Main Menu",{"quit":Button(button_gen("Quit Game"),(50,50))}),
     "game": obj.GameMenu()
 }
 menu_current = "main"
@@ -59,10 +75,16 @@ def menu_switch(menustr:str):
     else:
         print(t("error.menu_switch.menunotfound"))
 def menu_render(menustr:str):
+    # menu specific things
     if menustr == "main":
         pyg_screen.blit(text_gen("main menu lol"),(0,0))
     else:
         print(t("error.menu_render.menunotregistered"))
+    # render buttons
+    for button in list(menu_dict[menu_current].buttons.values()):
+        button.render()
+
+
 
 
 " MAIN LOOP "
